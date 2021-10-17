@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+  <link href="scripts/style.css"rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+</head>
+  <body>
+    <h1>Weather App</h1>
+    <ul>
+      <li class="top">
+    <div class="row">
+      <div class="col-md-3"><a href="url">Canberra</a></div>
+      <div class="col-md-3"><a href="url">Tokyo</a></div>
+      <div class="col-md-3"><a href="url">Seoul</a></div>
+      <div class="col-md-3"><a href="url">Paris</a></div>
+    </div>
+    <form id="search-input">
+      📍
+      <input type="text" placeholder="Enter a city" id="input" />
+      <input type="submit" value="Search" id="search" />
+      <input type="submit" value="Current" id="current"/>
+    </form>
+   <p>
+     <div class="row">
+<div class="col-md-4"> <div class="location"> Tokyo</div> <br/><div class="date">Monday 9:00</div></div>
+
+<div class="weather col-md-4"><img src="images/thunder.png" class="thunder" alt="Thunderstorms"><br/>Thunderstorms</div>
+<div class="col-md-4"><div class="temperature">20</div><span> <a href="#" id="celsius">°C</a></span>|<a href="#" id="fahrenheit">°F
+</a></div>
+</div>
+     <div class="extra">
+<span class="precipitation">Precipitation:</span>
+<span class="precipitation">65%</span>
+<span class="humidity">Humidity: 60%</span>
+<span class="wind">Wind:</span>
+<span class="wind">3 km/h</span>
+     </div>
+    </p>
+  </li>
+    <li class="bottom">
+    <div class="card-group">
+      
+<div class="card" style="width: 18rem;">
+    <h2 class="card-title">TUE</h2>
+  <img src="images/sunny.png" class="card-img-top" alt="sunny">
+  <div class="card-body">
+    <p class="card-text">25°C</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <h2 class="card-title">WED</h2>
+  <img src="images/cloudy.png" class="card-img-top" alt="cloudy">
+  <div class="card-body">
+    <p class="card-text">23°C</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <h2 class="card-title">THUR</h2>
+  <img src="images/cloudy.png" class="card-img-top" alt="cloudy">
+  <div class="card-body">
+    <p class="card-text">21°C</p>
+  </div>
+</div>
+  <div class="card" style="width: 18rem;">
+      <h2 class="card-title">FRI</h2>
+  <img src="images/rainy.png" class="card-img-top" alt="rainy">
+  <div class="card-body">
+    <p class="card-text">17°C</p>
+  </div>
+</div>
+    </div>
+  </li>
+    </ul>]
+
+  <script src="scripts/index.js">
+   </script>
+  </body>
+</html>

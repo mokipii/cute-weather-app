@@ -1,0 +1,103 @@
+h1 {
+  text-align: center;
+  font-weight: 900;
+  margin: 20px 0px;
+  font-size: 34px;
+  line-height: 48px;
+}
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.top {
+  list-style: none;
+  width: 600px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0 auto;
+  height: 300px;
+  border: 2px solid #72beee;
+  border-radius: 50px 50px 0px 0px;
+  text-align: center;
+  background: #72beee;
+  color: white;
+}
+.row {
+  text-align: center;
+  margin: 20px 0px 30px 0px;
+}
+a {
+  color: white;
+}
+form {
+  text-align: center;
+  margin: 30px;
+  font-size: 15px;
+}
+input[type="text"] {
+  width: 300px;
+}
+.location {
+  font-weight: 500;
+  font-size: 22px;
+}
+.date {
+  font-weight: 500;
+  font-size: 20px;
+}
+.thunder {
+  max-width: 50%;
+  min-width: 0%;
+}
+.weather {
+  font-size: 18px;
+  line-height: 18px;
+}
+.temperature {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+}
+.extra {
+  font-size: 15px;
+  line-height: 0px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0px;
+}
+span {
+  display: inline-block;
+}
+.humidity {
+  padding: 0px 30px;
+}
+.bottom {
+  list-style: none;
+  width: 600px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0 auto;
+  height: 200px;
+  border: 2px solid #edebe9;
+  border-radius: 0px 0px 50px 50px;
+  text-align: center;
+  background: #edebe9;
+}
+.card {
+  background: #edebe9;
+  border: none;
+  height: 100px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px auto;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
