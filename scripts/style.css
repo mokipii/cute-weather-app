@@ -44,9 +44,9 @@ input[type="text"] {
   font-weight: 500;
   font-size: 20px;
 }
-.thunder {
-  max-width: 50%;
-  min-width: 0%;
+#todayIcon {
+  max-width: 100%;
+  max-height: auto;
 }
 .weather {
   font-size: 18px;

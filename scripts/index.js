@@ -28,7 +28,7 @@ function displayTemperature(response) {
   let temp = document.querySelector(".temperature");
   temp.innerHTML = temperature;
 
-  let description = document.querySelector(".weather");
+  let description = document.querySelector(".description");
   description.innerHTML = response.data.weather[0].description;
 
   let humidity = document.querySelector("#humidity");
@@ -38,7 +38,8 @@ function displayTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let todayIcon = document.querySelector("#todayIcon");
-  todayIcon.innerHTML = `<img src="img/${response.data.weather[0].icon}.png">`;
+  todayIcon.innerHTML = `<img src="images/${response.data.weather[0].icon}.png" width="70" 
+     height="70">`;
 }
 
 function searchCity(city) {
