@@ -51,6 +51,7 @@ input[type="text"] {
 .weather {
   font-size: 18px;
   line-height: 18px;
+  text-transform: capitalize;
 }
 .temperature {
   font-weight: 400;
@@ -103,4 +104,6 @@ span {
 }
 .link {
   text-align: center;
+  font-size: 15px;
+  margin: 0 auto;
 }

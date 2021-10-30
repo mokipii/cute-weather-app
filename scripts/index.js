@@ -1,20 +1,39 @@
+//Week 4
+let now = new Date();
+let hour = now.getHours();
+let minute = String(now.getMinutes()).padStart(2, "0");
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let date = document.querySelector(".date");
+date.innerHTML = `${day} ${hour}:${minute}`;
+
 //Week 5
 let units = "metric";
 let apiKey = "ad793a6d772939c31783de5822791acf";
-function showTemperature(response) {
+function displayTemperature(response) {
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
-
   let location = document.querySelector(".location");
   location.innerHTML = `${city}`;
 
-  let displayTemp = document.querySelector(".temperature");
-  displayTemp.innerHTML = temperature;
+  let temp = document.querySelector(".temperature");
+  temp.innerHTML = temperature;
+
+  let description = document.querySelector(".weather");
+  description.innerHTML = response.data.weather[0].description;
 }
 
 function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(displayTemperature);
 }
 function buttonClick(event) {
   event.preventDefault();
@@ -41,23 +60,7 @@ function clickCurrent(event) {
 let currentButton = document.querySelector("#current");
 currentButton.addEventListener("click", clickCurrent);
 
-//Week 4
-let now = new Date();
-let hour = now.getHours();
-let minute = String(now.getMinutes()).padStart(2, "0");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-let day = days[now.getDay()];
-let date = document.querySelector(".date");
-date.innerHTML = `${day} ${hour}:${minute}`;
-
+//fahrenheit and celsius
 function changeFahrenheit(event) {
   event.preventDefault();
   let ftemperature = document.querySelector(".temperature");
