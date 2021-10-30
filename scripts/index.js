@@ -15,12 +15,13 @@ let day = days[now.getDay()];
 let date = document.querySelector(".date");
 date.innerHTML = `${day} ${hour}:${minute}`;
 
-//Week 5
+//When search button clicked
 let units = "metric";
 let apiKey = "ad793a6d772939c31783de5822791acf";
 function displayTemperature(response) {
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
+
   let location = document.querySelector(".location");
   location.innerHTML = `${city}`;
 
@@ -29,6 +30,12 @@ function displayTemperature(response) {
 
   let description = document.querySelector(".weather");
   description.innerHTML = response.data.weather[0].description;
+
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function searchCity(city) {
@@ -50,7 +57,7 @@ function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl2).then(showTemperature);
+  axios.get(apiUrl2).then(displayTemperature);
 }
 //When Current button is clicked
 function clickCurrent(event) {
