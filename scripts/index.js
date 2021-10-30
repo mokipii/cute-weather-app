@@ -15,7 +15,7 @@ let day = days[now.getDay()];
 let date = document.querySelector(".date");
 date.innerHTML = `${day} ${hour}:${minute}`;
 
-//When search button clicked
+//Showing temperature and everything else
 let units = "metric";
 let apiKey = "ad793a6d772939c31783de5822791acf";
 function displayTemperature(response) {
@@ -36,6 +36,9 @@ function displayTemperature(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+
+  let todayIcon = document.querySelector("#todayIcon");
+  todayIcon.innerHTML = `<img src="img/${response.data.weather[0].icon}.png">`;
 }
 
 function searchCity(city) {
@@ -50,9 +53,7 @@ function buttonClick(event) {
 let form = document.querySelector("#search-input");
 form.addEventListener("submit", buttonClick);
 
-//bonus
 //Geolocation API Find Position
-
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
