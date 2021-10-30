@@ -38,10 +38,8 @@ function displayTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let todayIcon = document.querySelector("#todayIcon");
-  todayIcon.innerHTML = setAttribute(
-    "src",
-    `${response.data.weather[0].icon}.png`
-  );
+  todayIcon.innerHTML = `<img src="images/${response.data.weather[0].icon}.png" width="70" 
+     height="70">`;
 }
 
 function searchCity(city) {
