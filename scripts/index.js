@@ -20,13 +20,13 @@ let units = "metric";
 let apiKey = "ad793a6d772939c31783de5822791acf";
 function displayTemperature(response) {
   let city = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
+  ctemperature = response.data.main.temp;
 
   let location = document.querySelector(".location");
   location.innerHTML = `${city}`;
 
   let temp = document.querySelector(".temperature");
-  temp.innerHTML = temperature;
+  temp.innerHTML = Math.round(ctemperature);
 
   let description = document.querySelector(".description");
   description.innerHTML = response.data.weather[0].description;
@@ -70,18 +70,26 @@ let currentButton = document.querySelector("#current");
 currentButton.addEventListener("click", clickCurrent);
 
 //fahrenheit and celsius
+
 function changeFahrenheit(event) {
   event.preventDefault();
-  let ftemperature = document.querySelector(".temperature");
-  ftemperature.innerHTML = "66";
+  let temp = document.querySelector(".temperature");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let ftemp = (ctemperature * 9) / 5 + 32;
+  temp.innerHTML = Math.round(ftemp);
 }
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeFahrenheit);
 
 function changeCelsius(event) {
   event.preventDefault();
-  let ctemperature = document.querySelector(".temperature");
-  ctemperature.innerHTML = "20";
+  let temp = document.querySelector(".temperature");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  temp.innerHTML = Math.round(ctemperature);
 }
+let ctemperature = null;
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeFahrenheit);
+
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", changeCelsius);

@@ -58,6 +58,16 @@ input[type="text"] {
   font-size: 60px;
   line-height: 60px;
 }
+.active {
+  color: white;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: white;
+  cursor: default;
+}
 .extra {
   font-size: 15px;
   line-height: 0px;
@@ -68,6 +78,7 @@ input[type="text"] {
 span {
   display: inline-block;
 }
+
 .humidity {
   padding: 0px 30px;
 }
