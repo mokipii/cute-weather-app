@@ -100,30 +100,31 @@ span {
   padding: 0px 30px;
 }
 .bottom {
-  list-style: none;
   width: 600px;
   list-style: none;
-  padding: 10px 0;
+  padding: 0;
   margin: 0 auto;
-  height: 200px;
+  height: 180px;
   border: 2px solid #edebe9;
   border-radius: 0px 0px 50px 50px;
   text-align: center;
   background: #edebe9;
+  color: black;
 }
-.card {
+#forecast {
   background: #edebe9;
   border: none;
   height: 100px;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
-  margin: 10px auto;
+  color: black;
 }
 .card-title {
   font-size: 15px;
   font-weight: 600;
   opacity: 0.8;
+  color: black;
 }
 .card-img-top {
   display: block;
@@ -134,6 +135,7 @@ span {
 }
 .card-text {
   opacity: 0.4;
+  color: black;
 }
 .github-link {
   text-align: center;
@@ -177,10 +179,10 @@ span {
   }
   .bottom {
     width: 90%;
-    height: 800%;
+    height: 100%;
   }
-  .card {
-    height: 200px;
+  #forecast {
+    height: 100%;
   }
   .card-img-top {
     max-width: 30%;

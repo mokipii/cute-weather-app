@@ -14,6 +14,29 @@ let days = [
 let day = days[now.getDay()];
 let date = document.querySelector(".date");
 date.innerHTML = `${day} ${hour}:${minute}`;
+//showing forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["THU", "FRI", "SAT", "SUN"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+   
+    <div class="col-3">
+      <div class="card-title">${day}</div>
+      <img src="images/01d.png" class="card-img-top" alt="sunny" width="42" />
+      <div class ="weather-forecast-temperatures"><p class="card-text">25°C</p>
+    </div>
+  </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 //Showing temperature and everything else
 let units = "metric";
@@ -88,9 +111,12 @@ function changeCelsius(event) {
   fahrenheit.classList.remove("active");
   temp.innerHTML = Math.round(ctemperature);
 }
+
 let ctemperature = null;
+
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeFahrenheit);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", changeCelsius);
+displayForecast();
