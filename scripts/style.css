@@ -1,7 +1,7 @@
 h1 {
   text-align: center;
   font-weight: 900;
-  margin: 20px 0px;
+  margin: 20px 0px 20px 0px;
   font-size: 34px;
   line-height: 48px;
 }
@@ -11,7 +11,6 @@ body {
 .top {
   list-style: none;
   width: 600px;
-  list-style: none;
   padding: 10px 0;
   margin: 0 auto;
   height: 300px;
@@ -20,14 +19,19 @@ body {
   text-align: center;
   background: #72beee;
   color: white;
+  text-decoration: none;
 }
 .row {
   text-align: center;
   margin: 20px 0px 30px 0px;
+  color: white;
+  font-weight: 600px;
 }
-.col-md-3 {
+
+.link {
   color: white;
 }
+
 form {
   text-align: center;
   margin: 30px;
@@ -39,14 +43,19 @@ input[type="text"] {
 .location {
   font-weight: 500;
   font-size: 22px;
+  margin-left: 20px;
 }
 .date {
   font-weight: 500;
   font-size: 20px;
+  margin-top: 0px;
+  margin-left: 5px;
+  line-height: 0px;
 }
 #todayIcon {
   max-width: 100%;
   max-height: auto;
+  margin: 0px auto;
 }
 .weather {
   font-size: 18px;
@@ -70,6 +79,7 @@ input[type="text"] {
 }
 .extra {
   font-size: 15px;
+  font-weight: 600px;
   line-height: 0px;
   color: #ffffff;
   text-align: center;
@@ -105,16 +115,64 @@ span {
 }
 .card-title {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .card-img-top {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 50%;
+  max-height: auto;
 }
-.link {
+.github-link {
   text-align: center;
   font-size: 15px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .h1 {
+    padding-left: 50%;
+  }
+  .top {
+    width: 90%;
+    height: 200%;
+  }
+  #search-input {
+    display: inline;
+    margin-left: 0px;
+  }
+
+  input[type="text"] {
+    width: 50%;
+  }
+
+  #search {
+    display: inline-block;
+  }
+  #current {
+    display: inline-block;
+  }
+  #todayIcon {
+    max-height: 100%;
+    padding-top: 20px;
+  }
+
+  .extra {
+    display: inline;
+  }
+  .humidity {
+    padding: 0px 5px;
+  }
+  .bottom {
+    width: 90%;
+    height: 800%;
+  }
+  .card {
+    height: 200px;
+  }
+  .card-img-top {
+    max-width: 30%;
+    max-height: auto;
+  }
 }
