@@ -106,16 +106,6 @@ span {
   padding: 0px 10px 0px 0px;
 }
 
-.ocean {
-  height: 5%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.wave {
-  background: url();
-}
 .bottom {
   width: 600px;
   list-style: none;
