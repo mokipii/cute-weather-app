@@ -97,7 +97,7 @@ span {
 }
 
 .humidity {
-  padding: 0px 30px;
+  padding: 0px 10px 0px 0px;
 }
 .bottom {
   width: 600px;
@@ -175,7 +175,7 @@ span {
     display: inline;
   }
   .humidity {
-    padding: 0px 5px;
+    padding: 0px 10px 0px 0px;
   }
   .bottom {
     width: 90%;

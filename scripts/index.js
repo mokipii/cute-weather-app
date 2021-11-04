@@ -1,41 +1,77 @@
 //Week 4
 let now = new Date();
-let hour = now.getHours();
-let minute = String(now.getMinutes()).padStart(2, "0");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let date = document.querySelector(".date");
-date.innerHTML = `${day} ${hour}:${minute}`;
+
+function formatDate(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let nowDay = days[now.getDay()];
+  let nowMinutes = now.getMinutes();
+  let nowHours = now.getHours();
+
+  if (nowHours < 10) {
+    nowHours = "0" + nowHours;
+  }
+
+  if (nowMinutes < 10) {
+    nowMinutes = "0" + nowMinutes;
+  }
+
+  let formattedDate = document.querySelector(".date");
+  formattedDate.innerHTML = `${nowDay}, ${nowHours}:${nowMinutes}`;
+  return formattedDate;
+}
+console.log(formatDate(now));
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 //showing forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["THU", "FRI", "SAT", "SUN"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-   
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-3">
-      <div class="card-title">${day}</div>
-      <img src="images/01d.png" class="card-img-top" alt="sunny" width="42" />
-      <div class ="weather-forecast-temperatures"><p class="card-text">25°C</p>
+      <div class="card-title">${formatDay(forecastDay.dt)}</div>
+      <img src="images/${
+        forecastDay.weather[0].icon
+      }.png" class="card-img-top" alt="sunny" width="42" />
+      <div class ="weather-forecast-temperatures"><p class="card-text">${Math.round(
+        forecastDay.temp.max
+      )}°C</p>
     </div>
   </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+// connecting API to forecast
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ad793a6d772939c31783de5822791acf";
+  let apiUrl3 = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl3).then(displayForecast);
 }
 
 //Showing temperature and everything else
@@ -64,6 +100,8 @@ function displayTemperature(response) {
   todayIcon.innerHTML = `<img src="images/${response.data.weather[0].icon}.png" width="70" 
      height="70">`;
   todayIcon.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -119,4 +157,4 @@ fahrenheit.addEventListener("click", changeFahrenheit);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", changeCelsius);
-displayForecast();
+searchCity("Sydney");
