@@ -13,14 +13,18 @@ body {
   width: 600px;
   padding: 10px 0;
   margin: 0 auto;
-  height: 300px;
+  height: 290px;
   border: 2px solid #72beee;
   border-radius: 50px 50px 0px 0px;
   text-align: center;
   background: #72beee;
   color: white;
   text-decoration: none;
+  -webkit-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
+  -moz-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
+  box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
 }
+
 .row {
   text-align: center;
   margin: 20px 0px 30px 0px;
@@ -30,7 +34,7 @@ body {
 
 .link {
   color: white;
-  opacity: 0.8;
+  text-decoration: none;
   font-weight: 500;
 }
 
@@ -48,7 +52,7 @@ input[type="text"] {
   margin-left: 20px;
 }
 .date {
-  font-weight: 200;
+  font-weight: 300;
   font-size: 20px;
   margin-top: 0px;
   margin-left: 5px;
@@ -58,7 +62,8 @@ input[type="text"] {
 #todayIcon {
   max-width: 100%;
   max-height: auto;
-  margin: 0px auto;
+  margin: 5px 5px 5px 5px;
+  object-fit: fill;
 }
 .weather {
   font-size: 22px;
@@ -86,11 +91,12 @@ input[type="text"] {
 }
 .extra {
   font-size: 15px;
+  font-weight: 300;
   opacity: 0.8;
   line-height: 0px;
   color: #ffffff;
   text-align: center;
-  margin-top: 0px;
+  margin: 0px 0px 20px 0px;
 }
 span {
   display: inline-block;
@@ -98,6 +104,17 @@ span {
 
 .humidity {
   padding: 0px 10px 0px 0px;
+}
+
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.wave {
+  background: url();
 }
 .bottom {
   width: 600px;
@@ -110,7 +127,11 @@ span {
   text-align: center;
   background: #edebe9;
   color: black;
+  -webkit-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
+  -moz-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
+  box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
 }
+
 #forecast {
   background: #edebe9;
   border: none;
@@ -134,22 +155,34 @@ span {
   max-height: auto;
 }
 .card-text {
-  opacity: 0.4;
+  opacity: 0.8;
   color: black;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.weather-temp-min {
+  margin-left: 10px;
+  opacity: 0.6;
+  font-weight: 400;
 }
 .github-link {
   text-align: center;
   font-size: 15px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .h1 {
     padding-left: 50%;
   }
   .top {
     width: 90%;
     height: 200%;
+  }
+
+  input[type="text"] {
+    width: 300px;
+    margin-top: 20px;
   }
   #search-input {
     display: inline;
@@ -168,7 +201,7 @@ span {
   }
   #todayIcon {
     max-height: 100%;
-    padding-top: 20px;
+    padding-top: 30px;
   }
 
   .extra {
