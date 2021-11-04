@@ -45,7 +45,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 4) {
+    if (index > 0 && index < 5) {
       forecastHTML =
         forecastHTML +
         `
@@ -54,9 +54,11 @@ function displayForecast(response) {
       <img src="images/${
         forecastDay.weather[0].icon
       }.png" class="card-img-top" alt="sunny" width="42" />
-      <div class ="weather-forecast-temperatures"><p class="card-text">${Math.round(
+      <div class ="weather-forecast-temperatures"><span class="card-text">${Math.round(
         forecastDay.temp.max
-      )}°C</p>
+      )}°</span><span class="weather-temp-min"><span class="card-text">${Math.round(
+          forecastDay.temp.min
+        )}°</span></span>
     </div>
   </div>
   `;
@@ -97,8 +99,8 @@ function displayTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let todayIcon = document.querySelector("#todayIcon");
-  todayIcon.innerHTML = `<img src="images/${response.data.weather[0].icon}.png" width="70" 
-     height="70">`;
+  todayIcon.innerHTML = `<img src="images/${response.data.weather[0].icon}.png" width="80" 
+     height="80">`;
   todayIcon.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
@@ -157,4 +159,5 @@ fahrenheit.addEventListener("click", changeFahrenheit);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", changeCelsius);
-searchCity("Sydney");
+
+searchCity("Melbourne");
