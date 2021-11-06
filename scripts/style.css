@@ -1,7 +1,7 @@
 h1 {
   text-align: center;
   font-weight: 900;
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0px 50px 0px;
   font-size: 34px;
   line-height: 48px;
 }
@@ -13,16 +13,16 @@ body {
   width: 600px;
   padding: 10px 0;
   margin: 0 auto;
-  height: 290px;
+  height: 300px;
   border: 2px solid #72beee;
   border-radius: 50px 50px 0px 0px;
   text-align: center;
   background: #72beee;
   color: white;
   text-decoration: none;
-  -webkit-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
-  -moz-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
-  box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
+  -webkit-box-shadow: 10px 10px 84px -8px rgba(114, 190, 238, 0.7);
+  -moz-box-shadow: 10px 10px 84px -8px rgba(114, 190, 238, 0.7);
+  box-shadow: 10px 10px 84px -8px rgba(114, 190, 238, 0.7);
 }
 
 .row {
@@ -48,14 +48,14 @@ input[type="text"] {
 }
 .location {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 28px;
   margin-left: 20px;
 }
 .date {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 0px;
-  margin-left: 5px;
+  margin-left: 20px;
   line-height: 0px;
   opacity: 0.8;
 }
@@ -66,7 +66,7 @@ input[type="text"] {
   object-fit: fill;
 }
 .weather {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 18px;
   text-transform: capitalize;
 }
@@ -74,7 +74,7 @@ input[type="text"] {
   font-weight: 500;
 }
 .temperature {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 60px;
   line-height: 60px;
 }
@@ -117,9 +117,9 @@ span {
   text-align: center;
   background: #edebe9;
   color: black;
-  -webkit-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
-  -moz-box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
-  box-shadow: 15px 15px 35px -6px rgba(158, 158, 158, 0.7);
+  -webkit-box-shadow: 10px 10px 84px -8px rgba(114, 190, 238, 0.7);
+  -moz-box-shadow: 10px 10px 84px -8px rgba(114, 190, 238, 0.7);
+  box-shadow: 10px 10px 84px -8px rgba(114, 190, 238, 0.7);
 }
 
 #forecast {
@@ -158,9 +158,24 @@ span {
 .github-link {
   text-align: center;
   font-size: 15px;
-  margin: 30px auto;
+  margin: 50px auto;
+  opacity: 0.8;
 }
 
+body {
+  animation: transitionIn 0.75s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateY(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
 @media only screen and (max-width: 800px) {
   .h1 {
     padding-left: 50%;
@@ -176,7 +191,7 @@ span {
   }
   #search-input {
     display: inline;
-    margin-left: 0px;
+    margin-left: 20px;
   }
 
   input[type="text"] {
