@@ -102,7 +102,6 @@ function displayTemperature(response) {
   todayIcon.innerHTML = `<img src="scripts/images/${response.data.weather[0].icon}.png" width="80" 
      height="80">`;
   todayIcon.setAttribute("alt", response.data.weather[0].description);
-
   getForecast(response.data.coord);
 }
 
