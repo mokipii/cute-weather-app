@@ -99,7 +99,7 @@ function displayTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let todayIcon = document.querySelector("#todayIcon");
-  todayIcon.innerHTML = `<img src="cute-weather-app/images/${response.data.weather[0].icon}.png" width="80" 
+  todayIcon.innerHTML = `<img src="scripts/images/${response.data.weather[0].icon}.png" width="80" 
      height="80">`;
   todayIcon.setAttribute("alt", response.data.weather[0].description);
 
